@@ -73,12 +73,11 @@ const login = async (req, res, next) => {
     } else {
       const token = await authenticate(user);
       console.log(token.token);
-      res
-        .status(201)
-        .cookie("accessToken", token.token, {
-          httpOnly: false,
-        })
-        .send({ status: "ok" });
+      res.cookie("accessToken", token.token, {
+        httpOnly: false,
+      });
+
+      res.status(201).send({ status: "ok" });
       // res.status(200).redirect(process.env.FE_URL);
       // res.status(201).send({ status: "ok" });
     }
