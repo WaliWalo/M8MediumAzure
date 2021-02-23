@@ -86,14 +86,14 @@ const login = async (req, res, next) => {
   }
 };
 
-const logout = async (req, res, next) => {
-  try {
-    res.send();
-  } catch (error) {
-    console.log(error);
-    next(error);
-  }
-};
+// const logout = async (req, res, next) => {
+//   try {
+//     res.send();
+//   } catch (error) {
+//     console.log(error);
+//     next(error);
+//   }
+// };
 
 const googleAuthenticate = async (req, res, next) => {
   try {
