@@ -97,6 +97,7 @@ const logout = async (req, res, next) => {
 
 const googleAuthenticate = async (req, res, next) => {
   try {
+    console.log("TEST", req.user.tokens.token);
     res.cookie("accessToken", req.user.tokens.token, {
       httpOnly: false,
     });
