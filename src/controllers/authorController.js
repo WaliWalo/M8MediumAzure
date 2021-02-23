@@ -74,7 +74,7 @@ const login = async (req, res, next) => {
       const token = await authenticate(user);
       console.log(token.token);
       res.cookie("accessToken", token.token, {
-        httpOnly: true,
+        httpOnly: false,
       });
 
       res.status(201).send({ status: "ok" });
