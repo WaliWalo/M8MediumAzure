@@ -75,6 +75,7 @@ const login = async (req, res, next) => {
       console.log(token.token);
       res.cookie("accessToken", token.token, {
         httpOnly: false,
+        secure: true,
       });
 
       res.status(201).send({ status: "ok" });
@@ -100,6 +101,7 @@ const googleAuthenticate = async (req, res, next) => {
     console.log("TEST", req.user.tokens.token);
     res.cookie("accessToken", req.user.tokens.token, {
       httpOnly: false,
+      secure: true,
     });
 
     res.status(200).redirect(process.env.FE_URL);
