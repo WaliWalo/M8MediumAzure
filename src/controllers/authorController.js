@@ -75,7 +75,7 @@ const login = async (req, res, next) => {
       console.log(token.token);
       res.cookie("accessToken", token.token, {
         httpOnly: true,
-        secure: true,
+        secure: false,
         sameSite: false,
       });
 
@@ -102,7 +102,7 @@ const googleAuthenticate = async (req, res, next) => {
     console.log("TEST", req.user.tokens.token);
     res.cookie("accessToken", req.user.tokens.token, {
       httpOnly: true,
-      secure: true,
+      secure: false,
       sameSite: false,
     });
 
