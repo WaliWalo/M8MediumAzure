@@ -3,9 +3,9 @@ const cors = require("cors");
 const { join } = require("path");
 const listEndpoints = require("express-list-endpoints");
 const mongoose = require("mongoose");
-const routes = require("./routes/articleRoutes");
-const authorRoutes = require("./routes/authorRoutes");
-const oauth = require("./controllers/oauth");
+const routes = require("./src/routes/articleRoutes");
+const authorRoutes = require("./src/routes/authorRoutes");
+const oauth = require("./src/controllers/oauth");
 const passport = require("passport");
 const cookieParser = require("cookie-parser");
 const {
@@ -13,7 +13,7 @@ const {
   forbiddenHandler,
   badRequestHandler,
   genericErrorHandler,
-} = require("./errorHandlers");
+} = require("./src/errorHandlers");
 
 const server = express();
 const whitelist = ["http://localhost:3000", "http://localhost:4000"];
